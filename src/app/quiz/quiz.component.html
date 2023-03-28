@@ -1,0 +1,24 @@
+
+<div class="hater">
+  <div class="cards" *ngIf="questions && questions.length > 0">
+  <h1 class="cim">
+    Quiz Night
+  </h1>
+  <div class="cards">
+    <app-quiz-question *ngFor="let q of questions;
+                        let index = index"
+                       [showCorrectAnswer]="result_show"
+                       [question]="q"
+                       (selectedAnswerChange)="questionAnswer($event,index)">
+
+    </app-quiz-question>
+  </div>
+
+<button  mat-raised-button color="yellow" class="Befejezes"   (click)="sendAnswers()">Küldés</button>
+<div class="result" *ngIf="result_show"> Eredmény : {{ result }}</div>
+</div>
+</div>
+
+
+
+

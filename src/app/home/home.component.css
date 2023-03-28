@@ -1,0 +1,16 @@
+.nev{
+  font-family: Bahnschrift;
+  font-size: 24px;
+  color:greenyellow;
+
+}
+button[mat-raised-button][color="blue"] {
+  background-color: blue;
+  color: white;
+}
+.kezd{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

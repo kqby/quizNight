@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+html, body { height: 100%; }
+body { margin: 0;
+  font-family:
+    Roboto,
+    "Helvetica Neue",
+    sans-serif;
+background-image: url("src/environments/background.jpg");
+  background-size: cover;
+}
+@media screen and (max-width: 768px) {
+  .nav-links {
+    width: 60%;
+  }
+}

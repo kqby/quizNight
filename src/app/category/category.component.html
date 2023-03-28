@@ -1,0 +1,7 @@
+<mat-form-field appearance="fill">
+  <mat-label>Kvíz kategoriák</mat-label>
+  <select matNativeControl required (change)="onCategoryChange($event)">
+    <option selected disabled> Válasz kategoriát</option>
+    <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+  </select>
+</mat-form-field>

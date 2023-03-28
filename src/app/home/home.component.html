@@ -1,0 +1,44 @@
+<div *ngIf="playerName">
+
+<nav class="navbar navbar-expand-lg navbar-light navbar-expand-sm"  style="background-color:  #293462;">
+  <div class="container-fluid">
+  <mat-icon>person</mat-icon>
+    <a class="navbar-brand" href="#">{{playerName}}</a>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item ">
+          <mat-icon> <span class="navbar-toggler-icon">receipt</span></mat-icon>
+          <button mat-button color="primary"   (click)="showSummary()">Összesítés</button>
+        </li>
+        <li class="nav-item">
+          <mat-icon><span class="material-symbols-outlined">
+restart_alt
+</span></mat-icon>
+          <button mat-button color="warn" (click)="resetQuiz()">Újrakezdés </button>
+        </li>
+        <mat-icon><span class="material-symbols-outlined">
+quiz
+</span></mat-icon>
+
+
+            <app-category (categoryClick)="onCategorySelected($event)"></app-category>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <app-quiz-summary *ngIf="isShow"></app-quiz-summary>
+  <app-quiz [category]="categoryId"></app-quiz>
+</div>
+
+
+<div *ngIf="!playerName" class="kezd">
+  <form (ngSubmit)="onSubmit(playerForm)" #playerForm="ngForm">
+    <mat-label for="name" class="nev">Kérem adja meg a nevét</mat-label>
+    <mat-form-field>
+      <input  matInput placeholder="Név" type="text" id="name" name="name" required [(ngModel)]="name">
+    </mat-form-field>
+    <button mat-raised-button  color="blue" type="submit">Játék indítása</button>
+  </form>
+</div>
+
